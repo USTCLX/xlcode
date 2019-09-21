@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": "./dist/cli.js",
   "scripts": {
-    "start": "node ./dist/index.js",
+    "start": "npx babel-node  --presets @babel/preset-env ./lib/cli.js",
     "build": "rimraf dist && babel lib -d dist --plugins=@babel/plugin-transform-modules-commonjs",
     "prepublishOnly": "npm run build"
   },
@@ -28,7 +28,9 @@
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
     "rimraf": "^3.0.0"
   }
 }
